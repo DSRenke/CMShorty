@@ -9,8 +9,8 @@
         <Color x:Key="PrimaryColorLight">#0075bf</Color>
         <Color x:Key="PrimaryColorDark">#55AFCf</Color>
 
-        <Color x:Key="PrimaryTextColorLight">#CFCFCF</Color>
-        <Color x:Key="PrimaryTextColorDark">#AFAFAF</Color>
+        <Color x:Key="PrimaryTextColorLight">#000000</Color>
+        <Color x:Key="PrimaryTextColorDark">#FFFFFF</Color>
         <!-- Style Button -->
         <Style x:Key="PrimaryButton" TargetType="Button">
             <Setter Property="TextColor"
@@ -31,6 +31,33 @@
                  Value="{AppThemeBinding Light={StaticResource PrimaryTextColorLight}, Dark={StaticResource PrimaryTextColorDark}}">
             </Setter>
         </Style>
-        
+        <Style x:Key="BaseLabel" TargetType="Label">
+            <Setter Property="TextColor"
+                Value="{AppThemeBinding Light={StaticResource PrimaryTextColorLight}, Dark={StaticResource PrimaryTextColorDark}}">
+            </Setter>
+            <Setter Property="FontSize"
+                 Value="Medium">
+            </Setter>
+        </Style>
+        <Style x:Key="BaseSmallLabel" TargetType="Label" BaseResourceKey="BaseLabel">
+            <Setter Property="FontSize"
+                 Value="Small">
+            </Setter>
+        </Style>
+
+        <Style x:Key="BaseTitleLabel" TargetType="Label" BaseResourceKey="BaseLabel">
+            <Setter Property="FontAttributes"
+                Value="Bold">
+            </Setter>
+        </Style>
+
+        <Style x:Key="BaseTitleSmallLabel" TargetType="Label" BaseResourceKey="BaseSmallLabel">
+            <Setter Property="FontAttributes"
+                Value="Bold">
+            </Setter>
+        </Style>
+
+
+
     </Application.Resources>
 </prism:PrismApplication>

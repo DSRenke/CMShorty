@@ -1,6 +1,7 @@
 ﻿namespace CMShorty
 {
     using CMShorty.Navigation;
+    using CMShorty.URLShortModul.Manager;
     using CMShorty.URLShortModul.Views;
     using Prism.Ioc;
     using Prism.Unity;
@@ -21,6 +22,8 @@
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             Routing.RegisterRoute(nameof(Overview), typeof(Overview));
+            containerRegistry.RegisterSingleton<ISettingsManager, PreferencSettingsManager>();
+            containerRegistry.RegisterSingleton<IShortUrlManager, ShortIOShortUrlManager>();
         }
     }
 }

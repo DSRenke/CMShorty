@@ -7,9 +7,10 @@
         <StackLayout
             Margin="20">
             <Label
+                Style="{StaticResource BaseTitleLabel}"
                 HorizontalOptions="CenterAndExpand"
                 FontSize="Title"
-                Text="CM-Shorty">
+                Text="miethke-Shorty">
             </Label>
             <StackLayout>
                 <Entry
@@ -24,6 +25,83 @@
                     Command="{Binding ShortCommand}">
                 </Button>
             </StackLayout>
+            <ListView
+                HasUnevenRows="True"
+                SeparatorVisibility="None"
+                VerticalScrollBarVisibility="Never"
+                HorizontalScrollBarVisibility="Never"
+                ItemsSource="{Binding DataSource}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid
+                                HorizontalOptions="Fill"
+                                Margin="0,10,0,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Style="{StaticResource BaseTitleLabel}"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="Short URL:"
+                                    FontSize="Medium"
+                                    FontAttributes="Bold">
+                                </Label>
+                                <Label
+                                    Style="{StaticResource BaseTitleSmallLabel}"
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    FontSize="Small"
+                                    FontAttributes="Bold"
+                                    Text="Original URL:">
+                                </Label>
+                                <Label
+                                    Style="{StaticResource BaseTitleSmallLabel}"
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    FontSize="Small"
+                                    FontAttributes="Bold"
+                                    Text="Erstellt Am:">
+                                </Label>
+                                <Label
+                                    Style="{StaticResource BaseLabel}"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding ShortURL}">
+                                </Label>
+                                <Label
+                                    Style="{StaticResource BaseSmallLabel}"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Text="{Binding OriginalURL}">
+                                </Label>
+                                <Label
+                                    Style="{StaticResource BaseSmallLabel}"
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Text="{Binding CreatedAt, StringFormat='{0:dd.MM.yyyy}'}">
+                                </Label>
+                                <Label
+                                    Grid.Row="3"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    HeightRequest="1"
+                                    HorizontalOptions="Fill"
+                                    BackgroundColor="#001F55">
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

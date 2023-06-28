@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Prism.Core" Version="8.1.97" />
     <PackageReference Include="Prism.Forms" Version="8.1.97" />
     <PackageReference Include="Prism.Unity.Forms" Version="8.1.97" />
@@ -19,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="URLShortModul\Models\" />
+    <ProjectReference Include="..\DataRequest\DataRequest.csproj" />
+    <ProjectReference Include="..\ShortyIODataRequest\ShortyIODataRequest.csproj" />
   </ItemGroup>
 
   <ItemGroup>
