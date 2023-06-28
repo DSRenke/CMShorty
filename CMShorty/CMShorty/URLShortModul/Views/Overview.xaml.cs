@@ -1,5 +1,6 @@
 ﻿namespace CMShorty.URLShortModul.Views
 {
+    using Prism.Mvvm;
     using Xamarin.Forms;
     using Xamarin.Forms.Xaml;
 
@@ -8,6 +9,7 @@
     {
         public Overview()
         {
+            ViewModelLocator.SetAutowireViewModel(this, true);
             this.InitializeComponent();
         }
     }
