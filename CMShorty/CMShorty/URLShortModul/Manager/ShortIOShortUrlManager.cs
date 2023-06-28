@@ -18,9 +18,12 @@
 
         private readonly ISettingsManager settingsManager;
 
-        public ShortIOShortUrlManager(ISettingsManager settingsManager)
+        private readonly AppConfigManager appConfigManager;
+
+        public ShortIOShortUrlManager(ISettingsManager settingsManager, AppConfigManager appConfigManager)
         {
             this.settingsManager = settingsManager;
+            this.appConfigManager = appConfigManager;
             this.shortURLCollection = this.settingsManager.Get<List<ShortURLModel>>(SetttingsKeyShortHistorie) ?? new List<ShortURLModel>();
         }
 
@@ -41,10 +44,10 @@
 
             var parameter = new ShortRequestParameter();
             parameter.OriginalURL = longUrl;
-            parameter.Domain = "a64a.short.gy";
+            parameter.Domain = this.appConfigManager.Get("ShortIO:Domain");
             parameter.AllowDuplicates = false;
             parameter.RedirectType = 302;
-            parameter.Authorization = "key...";
+            parameter.Authorization = this.appConfigManager.Get("ShortIO:Authorization");
 
             request.Process(parameter);
         }
