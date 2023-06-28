@@ -1,26 +1,26 @@
 ﻿namespace CMShorty
 {
+    using CMShorty.Navigation;
+    using CMShorty.URLShortModul.Views;
+    using Prism.Ioc;
+    using Prism.Unity;
     using Xamarin.Forms;
 
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
         public App()
         {
             this.InitializeComponent();
-
-            this.MainPage = new MainPage();
         }
 
-        protected override void OnStart()
+        protected override void OnInitialized()
         {
+            this.MainPage = new MainShell();
         }
 
-        protected override void OnSleep()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-        }
-
-        protected override void OnResume()
-        {
+            Routing.RegisterRoute(nameof(Overview), typeof(Overview));
         }
     }
 }
