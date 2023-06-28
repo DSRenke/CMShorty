@@ -2,11 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CMShorty.URLShortModul.Views.Overview"
+             Style="{StaticResource PrimaryBackgroundStyle}"
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout
             Margin="20">
             <Label
+                Margin="0,20,0,20"
                 Style="{StaticResource BaseTitleLabel}"
                 HorizontalOptions="CenterAndExpand"
                 FontSize="Title"
@@ -14,6 +16,7 @@
             </Label>
             <StackLayout>
                 <Entry
+                    Visual="Default"
                     Style="{StaticResource PrimaryEntry}"
                     Keyboard="Email"
                     Placeholder="Url eingben"
@@ -95,13 +98,20 @@
                                     Grid.ColumnSpan="2"
                                     HeightRequest="1"
                                     HorizontalOptions="Fill"
-                                    BackgroundColor="#001F55">
+                                    Margin="0,10,0,0"
+                                    Style="{StaticResource BaseSeperator}">
                                 </Label>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button
+                Style="{StaticResource PrimaryButton}"
+                VerticalOptions="End"
+                Text="Light/Dark Mode"
+                Command="{Binding LightDarkModeCommand}">
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
