@@ -25,8 +25,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <MtouchSdkVersion>16.0</MtouchSdkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -129,7 +130,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\CMShorty\CMShorty.csproj">
-      <Project>{B15E2C7C-6D7A-41AE-ACDC-41FB30BF556B}</Project>
+      <Project>{763EF6BB-07EB-47CD-9C7C-98ED234C865F}</Project>
       <Name>CMShorty</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
              x:Class="CMShorty.URLShortModul.Views.Overview"
              Style="{StaticResource PrimaryBackgroundStyle}"
              Shell.NavBarIsVisible="False">
@@ -29,10 +31,7 @@
                 </Button>
             </StackLayout>
             <ListView
-                HasUnevenRows="True"
-                SeparatorVisibility="None"
-                VerticalScrollBarVisibility="Never"
-                HorizontalScrollBarVisibility="Never"
+                Style="{StaticResource BaseListView}"
                 ItemsSource="{Binding DataSource}">
                 <ListView.ItemTemplate>
                     <DataTemplate>

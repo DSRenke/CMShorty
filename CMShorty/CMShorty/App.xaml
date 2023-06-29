@@ -14,7 +14,26 @@
 
         <Color x:Key="PrimaryBackgroundColorLight">#FFFFFF</Color>
         <Color x:Key="PrimaryBackgroundColorDark">#000000</Color>
+        <Style x:Key="BaseListView"
+               TargetType="ListView">
+            <Setter Property="BackgroundColor"
+                    Value = "{AppThemeBinding Light={StaticResource PrimaryBackgroundColorLight}, Dark={StaticResource PrimaryBackgroundColorDark}}">
+            </Setter>
+            <Setter Property="HasUnevenRows"
+                    Value="True">
+            </Setter>
+            <Setter Property="SeparatorVisibility"
+                    Value="None">
+            </Setter>
+            <Setter Property="VerticalScrollBarVisibility"
+                    Value="Never">
+            </Setter>
+            <Setter Property="HorizontalScrollBarVisibility"
+                    Value="Never">
+            </Setter>
+        </Style>
 
+        <!-- Style ContentPage-->
         <Style x:Key="PrimaryBackgroundStyle"
                TargetType="ContentPage">
             <Setter Property="BackgroundColor"
@@ -73,9 +92,5 @@
                 Value="{AppThemeBinding Light={StaticResource PrimaryTextColorLight}, Dark={StaticResource PrimaryTextColorDark}}">
             </Setter>
         </Style>
-        
-
-
-
     </Application.Resources>
 </prism:PrismApplication>
