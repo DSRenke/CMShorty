@@ -76,6 +76,11 @@
         /// <returns>True wenn url valide ist, sonst false</returns>
         private bool IsUrlValide(string url)
         {
+            if (string.IsNullOrEmpty(url))
+            {
+                return false;
+            }
+
             if (!url.StartsWith("https://"))
             {
                 url = "https://" + url; // Hinzufügen von "https://" als Standardpräfix

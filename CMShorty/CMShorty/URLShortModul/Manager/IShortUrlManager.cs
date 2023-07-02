@@ -4,7 +4,6 @@
     using DataRequest.Models;
     using System;
     using System.Collections.Generic;
-
     public interface IShortUrlManager
     {
         void RequestShortUrl(string longUrl);
